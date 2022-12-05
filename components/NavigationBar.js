@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from "./Login";
 import { useRouter } from "next/router";
 
-const NavigationBar = () => {
+const NavigationBar = (props) => {
   const router = useRouter();
   const isCurrentPath = (path) => router.pathname === path;
   return (
