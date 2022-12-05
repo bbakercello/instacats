@@ -1,27 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { faCat } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { useRouter } from "next/router";
 
 const NavigationBar = () => {
   const router = useRouter();
   const isCurrentPath = (path) => router.pathname === path;
   return (
-    <nav className="flex justify-around bg-teal-500 p-6">
-      
+    <nav className="flex justify-between bg-teal-500 p-6">
       <div className="flex items-center text-white mr-6">
-        <Image
-          src="/cat-logo.png"
-          alt="InstaCats logo"
-          className="h-8 w-8"
-          width="8"
-          height="8"
-        />
         <Link lassName="font-semibold text-xl tracking-tight ml-2" href="/">
           InstaCats
         </Link>
       </div>
-      
+      <div className="flex items-center">
+        <FontAwesomeIcon
+          className="text-slate-600 text-6xl pr-2 "
+          icon={faCat}
+        />
+      </div>
+
       <div className="flex lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow">
           <Link
