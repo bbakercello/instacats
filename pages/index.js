@@ -14,8 +14,6 @@ export async function getServerSideProps() {
   return { props: { data } };
 }
 
-
-
 export default function Home(props) {
   const posts = props.data.slice(0, 10);
 
@@ -32,10 +30,15 @@ export default function Home(props) {
           {
             return (
               <div key={index} className="text-sky-100 p-2">
-                <Link
-                  href={'/' + post.pk
-                  }
-  >
+                <Link href={{
+                  pathname:`/posts/${post.pk}`,query: {
+                                  data: [
+                                    post.comments,
+                                    post.image,
+                                    post.name
+                                  ],
+                                },
+                              }}>
                   <p>{post.name}</p>
                   <Image
                     alt="hello"
