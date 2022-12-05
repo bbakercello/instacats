@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import NavigationBar from "../components/NavigationBar";
 import fetchPosts from "./api/posts";
-
+import Link from "next/link";
+import { useEffect } from "react";
 const callAPI = fetchPosts;
 
 export async function getServerSideProps() {
@@ -13,9 +14,11 @@ export async function getServerSideProps() {
   return { props: { data } };
 }
 
+
+
 export default function Home(props) {
   const posts = props.data.slice(0, 10);
-  console.log(posts);
+
   return (
     <div>
       <Head>
@@ -28,8 +31,19 @@ export default function Home(props) {
         {posts.map((post, index) => {
           {
             return (
-              <div className="text-sky-100">
-                <Image alt="hello" width="40" height="40"></Image>
+              <div key={index} className="text-sky-100 p-2">
+                <Link
+                  href={'/' + post.pk
+                  }
+  >
+                  <p>{post.name}</p>
+                  <Image
+                    alt="hello"
+                    width="40"
+                    height="40"
+                    src={`http://catstagram.lofty.codes/media/${post.image}`}
+                  ></Image>
+                </Link>
               </div>
             );
           }
