@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { faCat } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Login from "./Login";
 import { useRouter } from "next/router";
 
 const NavigationBar = () => {
@@ -33,14 +33,7 @@ const NavigationBar = () => {
           >
             Upload Photo
           </Link>
-          <Link
-            className={`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4 ${
-              isCurrentPath("/login") ? "text-white font-bold" : ""
-            }`}
-            href="/login"
-          >
-            Login
-          </Link>
+          <Login></Login>
           <Link
             className={`block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white ${
               isCurrentPath("/register") ? "text-white font-bold" : ""

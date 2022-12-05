@@ -3,7 +3,6 @@ import Image from "next/image";
 import NavigationBar from "../components/NavigationBar";
 import fetchPosts from "./api/posts";
 import Link from "next/link";
-import { useEffect } from "react";
 const callAPI = fetchPosts;
 
 export async function getServerSideProps() {
