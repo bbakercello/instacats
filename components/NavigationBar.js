@@ -12,7 +12,7 @@ const NavigationBar = () => {
   return (
     <nav className="flex justify-between bg-teal-500 p-6">
       <div className="flex items-center text-white mr-6">
-        <Link lassName="font-semibold text-xl tracking-tight ml-2" href="/">
+        <Link className="font-semibold text-xl tracking-tight ml-2" href="/">
           InstaCats
         </Link>
       </div>
