@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 export async function getServerSideProps(context) {
@@ -9,22 +9,29 @@ export async function getServerSideProps(context) {
   return { props: { value: context.query } };
 }
 
-export default function Details(props){
+export default function Details(props) {
+  const [data, setData] = useState([]);
+
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
         `http://catstagram.lofty.codes/api/posts/${props.value.pk}`
       );
-      console.log(response.data)
-      return response.data;
+      console.log(response.data);
+      setData(response.data);
     } catch (error) {
       console.error(error);
     }
   };
-  fetchPosts()
-  return(
-    <div>
-      hello
-    </div>
-  )
+  useEffect(() => {fetchPosts();
+}, []);
+  
+  const loaded = () => {
+    return <div>{data.name}</div>;
+  };
+  const loading = () => {
+    return <h1>Loading...</h1>;
+  };
+
+  return data ? loaded() : loading();
 }
