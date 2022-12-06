@@ -12,7 +12,7 @@ const Posts = (props) => {
             return (
               <div
                 key={index}
-                className="self-center text-sky-100 p-4 m-4 rounded-lg bg-sky-700"
+                className="self-center text-sky-100 p-4 m-4 rounded-lg bg-teal-500"
               >
                 <Link
                   href={{

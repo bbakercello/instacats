@@ -20,7 +20,7 @@ const Login = () => {
                 <Image
                   src={user.picture}
                   alt="Profile"
-                  className="nav-user-profile rounded-circle"
+                  className="nav-user-profile rounded-full shadow-lg"
                   width="50"
                   height="50"
                   decode="async"
