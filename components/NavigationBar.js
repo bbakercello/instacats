@@ -10,7 +10,7 @@ const NavigationBar = (props) => {
   const { user, error, isLoading } = useUser();
 
   return (
-    <nav className="flex justify-between bg-teal-500 p-4 sticky top-0">
+    <nav className="flex justify-between bg-teal-500 p-4 sticky top-0 shadow-lg">
       <div className="flex items-center text-white mr-6">
         <Link className="font-semibold text-xl tracking-tight ml-2" href="/">
           InstaCats

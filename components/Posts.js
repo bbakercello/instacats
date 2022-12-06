@@ -4,15 +4,16 @@ import Image from 'next/image';
 
 const Posts = (props) => {
     const posts = props.posts
+    console.log(posts)
   return (
-    <main className="flex justify-center">
+    <main className="flex justify-center bg-gradient-to-b from-slate-500 via-purple-500 to-slate-500">
       <div className="flex flex-col ">
         {posts.map((post, index) => {
           {
             return (
               <div
                 key={index}
-                className="self-center text-sky-100 p-4 m-4 rounded-lg bg-teal-500"
+                className="self-center text-sky-100 p-4 m-6 rounded-lg bg-teal-500"
               >
                 <Link
                   href={{
