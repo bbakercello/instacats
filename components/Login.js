@@ -32,7 +32,7 @@ const Login = () => {
                 <Menu.Item>
                   {({ active }) => (
                     <Link
-                      href="/profile"
+                      href="/Profile"
                       icon="user"
                       testId="navbar-profile-desktop"
                     >

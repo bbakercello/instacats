@@ -35,7 +35,7 @@ export default function Details(props) {
     return (
       <div className="bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 pb-8">
         <NavigationBar />
-        <div className="flex flex-col justify-center h-screen m-40">
+        <div className="flex flex-col justify-center h-max m-20">
           <div className="flex self-center justify-center w-full m-4">
             <Image
               className="rounded-lg shadow-lg border-solid border-2 border-slate-900"
@@ -45,7 +45,7 @@ export default function Details(props) {
               src={`http://catstagram.lofty.codes/media/${data.image}`}
             ></Image>
           </div>
-          <div className="flex flex-col mt-6 justify-center bg-teal-600 rounded-lg w-100 border-solid border-2 border-slate-900">
+          <div className="flex flex-col mt-6 self-center bg-teal-600 rounded-lg w-80 border-solid border-2 border-slate-900">
             {comments.map((comment) => (
               <div key={comment.pk} className="flex justify-center self-center">
                 <p className="text-lg break-all p-2 self-center">
