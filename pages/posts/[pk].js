@@ -6,8 +6,10 @@ import { useRouter } from "next/router";
 
 export default function Details() {
   const [data, setData] = useState([]);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const router = useRouter();
   const pid = router.query;
+
   const fetchPosts = async () => {
     try {
       const response = await axios.get(
@@ -40,16 +42,20 @@ export default function Details() {
               ></Image>
             </div>
             <div className="flex flex-col mt-6 self-center bg-teal-600 rounded-lg w-80 border-solid border-2 border-slate-900">
-              {comments.map((comment) => (
-                <div
-                  key={comment.pk}
-                  className="flex justify-center self-center"
-                >
-                  <p className="text-lg break-all p-2 self-center">
-                    {comment.text}
-                  </p>
-                </div>
-              ))}
+              <button onClick={() => setIsCollapsed(!isCollapsed)}>
+                {isCollapsed ? `View ${data.comments.length} Comments` : "Hide"}
+              </button>
+              {!isCollapsed &&
+                comments.map((comment) => (
+                  <div
+                    key={comment.pk}
+                    className="flex justify-center self-center"
+                  >
+                    <p className="text-lg break-all p-2 self-center bg-teal-500 rounded-lg m-2">
+                      {comment.text}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>

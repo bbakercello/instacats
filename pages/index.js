@@ -15,7 +15,7 @@ export async function getServerSideProps() {
 
 export default function Home(props) {
   const posts = props.data.slice(0, 10);
-
+  console.log(posts)
   return (
     <div>
       <Head>

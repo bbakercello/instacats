@@ -13,7 +13,7 @@ const Posts = (props) => {
             return (
               <div
                 key={index}
-                className="self-center text-sky-100 p-4 m-6 rounded-lg bg-teal-500"
+                className="self-center text-sky-100 p-6 m-6 rounded-lg bg-teal-500"
               >
                 <Link
                   href={{
@@ -23,16 +23,16 @@ const Posts = (props) => {
                     },
                   }}
                 >
-                  <p>{post.name}</p>
                   <div className="flex justify-center">
                     <Image
-                      className="te"
+                      className="rounded-lg"
                       alt="hello"
                       width="600"
                       height="80"
                       src={`http://catstagram.lofty.codes/media/${post.image}`}
                     ></Image>
                   </div>
+                  <p>{post.timestamp_updated}</p>
                 </Link>
               </div>
             );
