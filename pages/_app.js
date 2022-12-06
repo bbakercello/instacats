@@ -5,6 +5,7 @@ import "@fortawesome/fontawesome-free/js/regular";
 import "@fortawesome/fontawesome-free/js/brands";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <UserProvider>
