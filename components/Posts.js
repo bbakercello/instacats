@@ -6,7 +6,7 @@ const Posts = (props) => {
     const posts = props.posts
     console.log(posts)
   return (
-    <main className="flex justify-center bg-gradient-to-b from-slate-500 via-purple-500 to-slate-500">
+    <main className="flex justify-center bg-gradient-to-b from-slate-500 via-purple-500 to-slate-500 pt-6">
       <div className="flex flex-col ">
         {posts.map((post, index) => {
           {

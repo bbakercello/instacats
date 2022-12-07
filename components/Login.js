@@ -17,7 +17,7 @@ const Login = () => {
         <div>
           <div>
             <Menu>
-              <Menu.Button className="text-slate-700 pl-6 relative">
+              <Menu.Button className="text-slate-700 relative">
                 <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{
@@ -31,14 +31,14 @@ const Login = () => {
                     },
                   }}
                   whileTap={{ scale: 0.9 }}
+                  className='h-10 w-10 relative'
                 >
-            
                   <Image
                     src={user.picture}
                     alt="Profile"
-                    className="nav-user-profile rounded-full shadow-lg"
-                    width="50"
-                    height="50"
+                    className="md:scale-125 nav-user-profile rounded-full shadow-lg"
+                    layout="fill" // required
+                    objectFit="cover"
                     decode="async"
                     data-testid="navbar-picture-desktop"
                   />{" "}
